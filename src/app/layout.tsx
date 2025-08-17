@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Glory, Roboto } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header/page";
+import Footer from "@/components/footer/page";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const glory = Glory({
+  variable: "--font-glory",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const roboto = Roboto({
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${glory.variable} ${poppins.variable} ${roboto.variable} antialiased p-1 sm:p-2 md:p-3 lg:p-4 overflow-x-hidden`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

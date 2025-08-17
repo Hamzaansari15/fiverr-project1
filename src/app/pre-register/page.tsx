@@ -1,6 +1,8 @@
 import PreRegisterPage from "@/components/pre-register/page";
-import Image from "next/image";
+import React from "react";
 
-export default function Home() {
+const PreRegister = () => {
   return <PreRegisterPage />;
-}
+};
+
+export default PreRegister;
