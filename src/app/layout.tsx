@@ -3,6 +3,7 @@ import { Poppins, Glory, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/page";
 import Footer from "@/components/footer/page";
+import localFont from "next/font/local";
 
 const glory = localFont({
   src: [
