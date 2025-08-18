@@ -4,9 +4,40 @@ import "./globals.css";
 import Header from "@/components/header/page";
 import Footer from "@/components/footer/page";
 
-const glory = Glory({
+const glory = localFont({
+  src: [
+    {
+      path: "../../public/Gilroy/Gilroy-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+  ],
   variable: "--font-glory",
-  subsets: ["latin"],
 });
 
 const poppins = Poppins({
@@ -33,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${glory.variable} ${poppins.variable} ${roboto.variable} antialiased p-1 sm:p-2 md:p-3 lg:p-4 overflow-x-hidden`}
+        className={`${glory.classname} ${poppins.variable} ${roboto.variable} antialiased p-1 sm:p-2 md:p-3 lg:p-4 overflow-x-hidden`}
       >
         <Header />
         {children}
