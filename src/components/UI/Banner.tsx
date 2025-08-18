@@ -13,8 +13,8 @@ interface BannerProps {
   heading: string;
   children?: ReactNode;
   image: string;
-  isModalOpen?: boolean;
-  setIsModalOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  isModalOpen: boolean;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Banner: React.FC<BannerProps> = ({
