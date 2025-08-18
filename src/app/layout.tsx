@@ -39,6 +39,41 @@ const glory = localFont({
       style: "normal",
     },
   ],
+import localFont from "next/font/local";
+
+const glory = localFont({
+  src: [
+    {
+      path: "../../public/Gilroy/Gilroy-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/Gilroy/Gilroy-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+  ],
   variable: "--font-glory",
   // subsets: ["latin"],
 });
@@ -51,11 +86,13 @@ const glory = localFont({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
+  subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const roboto = Roboto({
   variable: "--font-roboto",
+  subsets: ["latin"],
   subsets: ["latin"],
 });
 
@@ -73,6 +110,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${glory.className} ${poppins.variable} ${roboto.variable} antialiased p-1 sm:p-2 md:p-3 lg:p-4 overflow-x-hidden`}
+        className={`${glory.classname} ${poppins.variable} ${roboto.variable} antialiased p-1 sm:p-2 md:p-3 lg:p-4 overflow-x-hidden`}
       >
         <Header />
         {children}
