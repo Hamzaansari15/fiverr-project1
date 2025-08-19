@@ -26,6 +26,7 @@ const Banner: React.FC<BannerProps> = ({
   heading,
   image,
   isModalOpen,
+  children,
   setIsModalOpen,
 }) => {
   return (
@@ -84,18 +85,24 @@ const Banner: React.FC<BannerProps> = ({
             {buttonText}
           </button>
         )}
-        {image && (
-          <div
-            className="
+        <div
+          className="
+          rounded-[8px]
+          md:rounded-xl
+          lg:rounded-2xl
+          overflow-hidden
             w-[300px] h-[150px]
             relative
             sm:w-[420px] sm:h-[210px]
             md:w-[720px] md:h-[360px]
           "
-          >
+        >
+          {image ? (
             <Image className="mt-4" src={image} alt="image" fill />
-          </div>
-        )}
+          ) : (
+            children
+          )}
+        </div>
         {isSecondButton && (
           <button
             className="

@@ -152,7 +152,7 @@ const SalesPage = () => {
       <Banner
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
-        image="/image14.png"
+        image=""
         isText={false}
         isFirstButton={false}
         buttonText={"Torna-se nosso parceiro agora"}
@@ -160,7 +160,15 @@ const SalesPage = () => {
         heading={
           "Assista agora e entenda como nossa <br/> parceria transforma o seu negócio."
         }
-      />
+      >
+        <iframe
+          className="absolute top-0 left-0 w-full h-full"
+          src="https://www.youtube.com/embed/V6AzpVNq5MI"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </Banner>
       <LeftImageSection
         isHeading={true}
         heading="Por que sua empresa <br/> deve fazer parte?"
