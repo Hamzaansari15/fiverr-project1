@@ -3,7 +3,7 @@ import React from "react";
 const TextSection: React.FC<{
   isModalOpen: boolean;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}> = ({ isModalOpen, setIsModalOpen }) => {
+}> = ({ setIsModalOpen }) => {
   return (
     <section className="flex gap-6 justify-center py-28">
       <div className="flex flex-col items-center gap-8">
@@ -17,8 +17,8 @@ const TextSection: React.FC<{
         <button
           onClick={() => setIsModalOpen(true)}
           className="
-          cursor-pointer
-          w-fit
+            cursor-pointer
+            w-fit
             px-8 py-4
             font-glory text-sm text-black font-bold
             bg-secondary

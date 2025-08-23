@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins, Glory, Roboto } from "next/font/google";
+import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header/page";
-import Footer from "@/components/footer/page";
 import localFont from "next/font/local";
 // import {} from "../../public/Gilroy/Gilroy-Regular.ttf";
 
@@ -42,11 +40,6 @@ const glory = localFont({
   variable: "--font-glory",
 });
 
-// const glory = Glory({
-//   variable: "--font-glory",
-//   subsets: ["latin"],
-// });
-
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -71,11 +64,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${glory.className} ${poppins.variable} ${roboto.variable} antialiased p-1 sm:p-2 md:p-3 lg:p-4 overflow-x-hidden`}
+        className={`${glory.className} ${poppins.variable} ${roboto.variable} antialiased overflow-x-hidden`}
       >
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );

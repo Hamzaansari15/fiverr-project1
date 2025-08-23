@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button, Input, Modal } from "antd";
+import { Input, Modal } from "antd";
 
 const ModalCustom: React.FC<{
   isModalOpen: boolean;

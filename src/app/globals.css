@@ -6,6 +6,8 @@
   --primary: #132743;
   --secondary: #a1c6ea;
   --font-primary: #e8f6f2;
+  --inner: #0e2b58;
+  --inner-primary: #4ebfec;
 }
 
 @theme inline {
@@ -14,11 +16,16 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-font-primary: var(--font-primary);
-  /* --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono); */
+  --color-inner: var(--inner);
+  --color-inner-primary: var(--inner-primary);
   --font-glory: var(--font-glory);
   --font-poppins: var(--font-poppins);
   --font-roboto: var(--font-roboto);
+}
+
+.my-box {
+  box-shadow: 0px -5px 8.9px 0px #ffffff40 inset, 0px 2px 18.4px 0px #0000000f;
+  backdrop-filter: blur(20.4px);
 }
 /* 
 @media (prefers-color-scheme: dark) {

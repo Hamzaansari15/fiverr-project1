@@ -1,6 +1,5 @@
 "use client";
 
-import { Button, Col, Flex, Row } from "antd";
 import Image from "next/image";
 import React, { ReactNode } from "react";
 
@@ -25,7 +24,6 @@ const Banner: React.FC<BannerProps> = ({
   buttonText,
   heading,
   image,
-  isModalOpen,
   children,
   setIsModalOpen,
 }) => {
@@ -105,7 +103,9 @@ const Banner: React.FC<BannerProps> = ({
         </div>
         {isSecondButton && (
           <button
+            onClick={() => setIsModalOpen(true)}
             className="
+            cursor-pointer
             px-8 py-4
             font-glory text-sm text-black font-bold
             bg-secondary

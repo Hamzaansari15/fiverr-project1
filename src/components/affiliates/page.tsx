@@ -200,7 +200,7 @@ Custo para participar: R$ 0,00. Ganhos ilimitados. Liberdade total para crescer.
         heading="O que você recebe como afiliado"
         isFirstText={false}
         isSecondText={false}
-        cardsItem={thirdCardsItem}
+        cardsItem={secondCardsItem}
       />
       <section className="w-screen -m-1 sm:-m-2 md:-m-3 lg:-m-4 pt-10 pb-20 flex justify-center bg-[#FAFAFA] my-12 md:my-16 lg:my-20 px-4">
         <div className="w-full max-w-[940px]">

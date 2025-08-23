@@ -1,5 +1,4 @@
 import PreRegisterPage from "@/components/pre-register/page";
-import Image from "next/image";
 
 export default function Home() {
   return <PreRegisterPage />;

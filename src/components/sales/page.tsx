@@ -265,6 +265,7 @@ const SalesPage = () => {
           <button
             onClick={() => setIsModalOpen(true)}
             className="
+            cursor-pointer
           w-fit mt-2
             px-8 py-4
             font-glory text-sm text-black font-bold
