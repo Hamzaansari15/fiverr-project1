@@ -16,7 +16,7 @@ const ThreeCardSection: React.FC<{ title: string; cards: Card[] }> = ({
   return (
     <section className="w-full flex justify-center relative z-10 mt-12 sm:mt-20 pb-12 sm:pb-24  px-4 sm:px-8">
       <div className="w-full max-w-[1200px]">
-        <h2 className="font-glory text-4xl font-bold sm:text-[54px] text-inner">
+        <h2 className="font-glory text-center sm:text-start text-4xl font-bold sm:text-[54px] text-inner">
           {title}
         </h2>
         <div className="w-full flex flex-wrap items-center justify-center sm:justify-start mt-12 sm:mt-16 gap-4 sm:gap-6">

@@ -1,6 +1,8 @@
 import React from "react";
 
-const Table = () => {
+const Table: React.FC<{
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ setOpen }) => {
   return (
     <section className="flex flex-col items-center w-full p-2 sm:p-4 mt-8 sm:mt-12">
       <div className="w-full max-w-[1200px]">
@@ -63,7 +65,10 @@ const Table = () => {
                 </p>
               </div>
               <div className="w-full h-12 flex items-center justify-center col-span-1 px-2 sm:px-4">
-                <button className="font-glory font-medium text-sm text-white bg-inner w-36 h-12 rounded-full">
+                <button
+                  onClick={() => setOpen(true)}
+                  className="cursor-pointer font-glory font-medium text-sm text-white bg-inner w-36 h-12 rounded-full"
+                >
                   VISUALIZAR
                 </button>
               </div>

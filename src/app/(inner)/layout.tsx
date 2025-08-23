@@ -1,6 +1,5 @@
 import InnerFooter from "@/components/footer/InnerFooter";
 import InnerHeader from "@/components/header/InnerHeader";
-import Image from "next/image";
 import React from "react";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({

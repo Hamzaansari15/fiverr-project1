@@ -4,10 +4,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Table from "@/components/UI/Table";
+import SecondModal from "@/components/UI/SecondModal";
 
 const LiveDrawsNested = () => {
   const [width, setWidth] = useState(0);
   const [state, setState] = useState("first");
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     setWidth(window.innerWidth);
     const handleResize = () => {
@@ -22,6 +24,7 @@ const LiveDrawsNested = () => {
   console.log(params);
   return (
     <main className="w-full bg-[#F3F4F8] relative">
+      <SecondModal setOpen={setOpen} isOpen={open} />
       <div className="absolute w-full h-[320px] sm:h-[540px] md:h-[700px] lg:h-[1000px] -top-14 sm:-top-24">
         <Image src={"/banner.png"} alt="banner" fill />
       </div>
@@ -63,14 +66,17 @@ const LiveDrawsNested = () => {
             </p>
           </div>
         </div>
-        <div className="relative rounded-4xl sm:rounded-[60px] my-box bg-white top-0 -z-10 max-w-[1200px] w-full">
+        <div className="relative px-4 sm:px-8 rounded-4xl sm:rounded-[60px] my-box bg-white top-0 -z-10 max-w-[1200px] w-full">
           <Image className="-z-10" src={"/frame.png"} alt="frame" fill />
-
           <div className="w-full flex items-center my-6 sm:my-12 flex-col gap-8 sm:gap-14">
             <Image src={"/cash.png"} alt="cash" width={314} height={240} />
-            {state === "first" || state === "second" ? (
+            {state === "first" ? (
               <p className="font-glory text-center text-2xl sm:text-[40px] font-bold text-inner">
                 SORTEIO SENDO REALIZADO: 1
+              </p>
+            ) : state === "second" ? (
+              <p className="font-glory text-center text-2xl sm:text-[40px] font-bold text-inner">
+                AGUARDE O PRÓXIMO SORTEIO:
               </p>
             ) : (
               <p className="font-glory text-inner font-black text-4xl sm:text-5xl md:text-6xl">
@@ -85,25 +91,25 @@ const LiveDrawsNested = () => {
                 height={125}
               />
             ) : state === "second" ? (
-              <div className="w-full flex sm:flex-nowrap flex-wrap items-center justify-center gap-4 px-12">
-                <div className="w-80 h-32 bg-[#0E2B5812] border-[2px] border-[#0E2B5812] rounded-4xl justify-center items-center flex">
-                  <p className="font-glory font-bold text-4xl sm:text-5xl md:text-6xl">
+              <div className="w-full flex sm:flex-nowrap items-center justify-center gap-4">
+                <div className="w-80 h-16 sm:h-32 sm:rounded-4xl bg-[#0E2B5812] border-[2px] border-[#0E2B5812] rounded-xl justify-center items-center flex">
+                  <p className="font-glory font-bold text-2xl sm:text-5xl md:text-6xl">
                     00
                   </p>
                 </div>
-                <p className="w-full sm:w-fit text-center font-glory font-bold text-4xl sm:text-5xl md:text-6xl">
+                <p className="sm:w-fit text-center font-glory font-bold text-4xl sm:text-5xl md:text-6xl">
                   :
                 </p>
-                <div className="w-80 h-32 bg-[#0E2B5812] border-[2px] border-[#0E2B5812] rounded-4xl justify-center items-center flex">
-                  <p className="font-glory font-bold text-4xl sm:text-5xl md:text-6xl">
+                <div className="w-80 h-16 sm:h-32 sm:rounded-4xl  bg-[#0E2B5812] border-[2px] border-[#0E2B5812] rounded-xl justify-center items-center flex">
+                  <p className="font-glory font-bold text-2xl sm:text-5xl md:text-6xl">
                     02
                   </p>
                 </div>
-                <p className="w-full sm:w-fit text-center font-glory font-bold text-4xl sm:text-5xl md:text-6xl">
+                <p className="sm:w-fit text-center font-glory font-bold text-4xl sm:text-5xl md:text-6xl">
                   :
                 </p>
-                <div className="w-80 h-32 bg-[#0E2B5812] border-[2px] border-[#0E2B5812] rounded-4xl justify-center items-center flex">
-                  <p className="font-glory font-bold text-4xl sm:text-5xl md:text-6xl">
+                <div className="w-80 h-16 sm:h-32 sm:rounded-4xl  bg-[#0E2B5812] border-[2px] border-[#0E2B5812] rounded-xl justify-center items-center flex">
+                  <p className="font-glory font-bold text-2xl sm:text-5xl md:text-6xl">
                     59
                   </p>
                 </div>
@@ -141,7 +147,7 @@ const LiveDrawsNested = () => {
                 onClick={() =>
                   setState((prev) => (prev === "first" ? "second" : "third"))
                 }
-                className="cursor-pointer font-glory text-inner font-black text-4xl sm:text-5xl md:text-6xl"
+                className="text-center cursor-pointer font-glory text-inner font-black text-4xl sm:text-5xl md:text-6xl"
               >
                 R$ 50,00 EM PIX
               </p>
@@ -179,7 +185,7 @@ const LiveDrawsNested = () => {
       <div className="w-full flex items-center justify-center">
         <div className="w-[94%] h-0.5 bg-black opacity-10" />
       </div>
-      <Table />
+      <Table setOpen={setOpen} />
     </main>
   );
 };

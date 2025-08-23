@@ -5,7 +5,7 @@ const InnerFooter = () => {
   return (
     <footer className="w-full p-2 sm:p-4 bg-[#F3F4F8]">
       <div className="relative w-full bg-inner flex h-60 rounded-4xl px-4 sm:px-16 overflow-hidden">
-        <div className="w-full h-16 gap-4 flex flex-wrap justify-between items-center mt-6 sm:mt-8 lg:mt-12">
+        <div className="w-full h-16 gap-4 flex flex-wrap justify-center sm:justify-between items-center mt-6 sm:mt-8 lg:mt-12">
           <Image
             src={"/logo2.png"}
             alt="logo"
